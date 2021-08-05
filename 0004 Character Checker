@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n = 0;
+    string text;
+    cin >> text;
+    for (int i = 0; i < text.length(); i++)
+    {
+        if (text[i] >= 'A' && text[i] <= 'Z')
+            n++;
+        else
+            n--;
+    }
+    if (n == text.length())
+        cout << "All Capital Letter";
+    else if (-n == text.length())
+        cout << "All Small Letter";
+    else
+        cout << "Mix";
+    return 0;
+}
