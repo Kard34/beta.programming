@@ -1,0 +1,38 @@
+#include <iostream>
+#include <climits>
+
+using namespace std;
+
+int main()
+{
+    int ABC[3], A = INT_MAX, B, C = INT_MIN;
+    char Com[10];
+    for (int i = 0; i < 3; i++)
+    {
+        cin >> ABC[i];
+        if (ABC[i] < A)
+            A = ABC[i];
+        if (ABC[i] > C)
+            C = ABC[i];
+    }
+    cin >> Com;
+    for (int i = 0; i < 3; i++)
+    {
+        if (Com[i] == 'A')
+            cout << A << " ";
+        else if (Com[i] == 'B')
+        {
+            for (int j = 0; j < 3; j++)
+            {
+                if (ABC[j] != A && ABC[j] != C)
+                {
+                    cout << ABC[j] << " ";
+                    break;
+                }
+            }
+        }
+        else
+            cout << C << " ";
+    }
+    return 0;
+}
