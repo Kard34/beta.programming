@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n, max = 0;
+    cin >> n;
+    int Like[10000], num[n];
+    for (int i = 0; i < 10000; i++)
+        Like[i] = 0;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> num[i];
+        Like[num[i] - 1]++;
+    }
+    for (int i = 0; i < n; i++)
+        if (Like[num[i] - 1] > max)
+            max = Like[num[i] - 1];
+    for (int i = 0; i < 10000; i++)
+        if (Like[i] == max)
+            cout << i + 1 << " ";
+    return 0;
+}
